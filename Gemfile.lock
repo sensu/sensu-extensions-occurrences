@@ -1,0 +1,49 @@
+PATH
+  remote: .
+  specs:
+    sensu-extensions-occurrences (0.0.1)
+      sensu-extension
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.2.5)
+    eventmachine (1.2.0.1)
+    oj (2.14.6)
+    rake (10.5.0)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    sensu-extension (1.5.0)
+      eventmachine
+    sensu-json (2.0.0)
+      oj (= 2.14.6)
+    sensu-logger (1.2.0)
+      eventmachine
+      sensu-json
+    sensu-settings (6.0.0)
+      sensu-json (>= 1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.6)
+  rake
+  rspec
+  sensu-extensions-occurrences!
+  sensu-logger
+  sensu-settings
+
+BUNDLED WITH
+   1.11.2
