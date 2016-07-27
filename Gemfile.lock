@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sensu-extensions-occurrences (0.0.1)
+    sensu-extensions-occurrences (1.0.0)
       sensu-extension
 
 GEM
