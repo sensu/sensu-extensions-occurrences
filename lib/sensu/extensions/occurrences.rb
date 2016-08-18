@@ -22,8 +22,11 @@ module Sensu
       def event_filtered?(event)
         check = event[:check]
         occurrences = check[:occurrences] || 1
+        watermark = event[:occurrences_watermark] || 1
         refresh = check[:refresh] || 1800
-        if occurrences.is_a?(Integer) && refresh.is_a?(Integer)
+        if event[:action] == :resolve && watermark >= occurrences
+          return ["enough occurrences", 1]
+        elsif occurrences.is_a?(Integer) && refresh.is_a?(Integer)
           if event[:occurrences] < occurrences
             return ["not enough occurrences", 0]
           end
