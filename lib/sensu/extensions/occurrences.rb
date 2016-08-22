@@ -23,7 +23,9 @@ module Sensu
         check = event[:check]
         occurrences = check[:occurrences] || 1
         refresh = check[:refresh] || 1800
-        if occurrences.is_a?(Integer) && refresh.is_a?(Integer)
+        if event[:action] == :resolve && event[:occurrences_watermark] >= occurrences
+          return ["enough occurrences", 1]
+        elsif occurrences.is_a?(Integer) && refresh.is_a?(Integer)
           if event[:occurrences] < occurrences
             return ["not enough occurrences", 0]
           end

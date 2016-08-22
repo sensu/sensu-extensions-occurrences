@@ -74,6 +74,7 @@ module Helpers
       :last_ok => one_second_ago,
       :last_state_change => one_second_ago,
       :occurrences => 1,
+      :occurrences_watermark => 1,
       :action => :create
     }
   end
