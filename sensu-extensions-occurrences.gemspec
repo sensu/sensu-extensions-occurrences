@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "sensu-extensions-occurrences"
-  spec.version       = "1.1.0"
+  spec.version       = "1.2.0"
   spec.authors       = ["Sensu-Extensions and contributors"]
   spec.email         = ["<sensu-users@googlegroups.com>"]
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "sensu-logger"
   spec.add_development_dependency "sensu-settings"
+  spec.add_development_dependency "github_changelog_generator"
 end
