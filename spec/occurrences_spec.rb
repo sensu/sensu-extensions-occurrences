@@ -57,6 +57,38 @@ describe "Sensu::Extension::Occurrences" do
     end
   end
 
+  it "can filter flapping events using occurrences with a refresh" do
+    async_wrapper do
+      event = event_template
+      event[:action] = :flapping
+      event[:check][:interval] = 2
+      @extension.safe_run(event) do |output, status|
+        expect(status).to eq(1)
+        event[:check][:occurrences] = 3
+        @extension.safe_run(event) do |output, status|
+          expect(status).to eq(0)
+          event[:occurrences] = 3
+          @extension.safe_run(event) do |output, status|
+            expect(status).to eq(1)
+            event[:occurrences] = 9
+            @extension.safe_run(event) do |output, status|
+              expect(status).to eq(0)
+              event[:check][:refresh] = 10
+              @extension.safe_run(event) do |output, status|
+                expect(status).to eq(0)
+                event[:check][:refresh] = 12
+                @extension.safe_run(event) do |output, status|
+                  expect(status).to eq(1)
+                  async_done
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+
   it "will not filter events using occurrences with resolve action" do
     async_wrapper do
       event = event_template

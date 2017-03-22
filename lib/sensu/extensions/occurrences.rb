@@ -29,7 +29,8 @@ module Sensu
           if event[:occurrences] < occurrences
             return ["not enough occurrences", 0]
           end
-          if event[:occurrences] > occurrences && event[:action] == :create
+          if event[:occurrences] > occurrences &&
+              [:create, :flapping].include?(event[:action])
             interval = check[:interval] || 60
             count = refresh.fdiv(interval).to_i
             unless count == 0 || (event[:occurrences] - occurrences) % count == 0
