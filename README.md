@@ -14,6 +14,8 @@ Users can specify a minimum number of `occurrences` before an event
 will be passed to a handler. Users can also specify a `refresh` time,
 in seconds, to reset where recurrences are counted from.
 
+[![Build Status](https://travis-ci.org/sensu-extensions/sensu-extensions-occurrences.svg?branch=master)](https://travis-ci.org/sensu/sensu-extensions-occurrences)
+
 ## Configuration
 
 The `occurrences` filter is included in every install of Sensu. To
