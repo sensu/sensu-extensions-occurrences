@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/sensu-extensions/sensu-extensions-occurrences/tree/HEAD)
-
-[Full Changelog](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.1.0...HEAD)
+## [v1.2.0](https://github.com/sensu-extensions/sensu-extensions-occurrences/tree/v1.2.0) (2017-03-22)
+[Full Changelog](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.1.0...v1.2.0)
 
 **Closed issues:**
 
