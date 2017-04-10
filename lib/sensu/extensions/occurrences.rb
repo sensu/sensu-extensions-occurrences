@@ -11,6 +11,23 @@ module Sensu
         "filter events using event occurrences"
       end
 
+      # Convert a string value to an integer, or return nil if this
+      # fails. Integer values are returned unchanged.
+      #
+      # @param x [String]
+      # @return [Integer]
+      def str2int(x)
+        if x.is_a?(Integer)
+          return x
+        elsif x.is_a?(String)
+          begin
+            result = Integer(x)
+          rescue
+            result = nil
+          end
+        end
+      end
+        
       # Determine if an event occurrence count meets the user defined
       # requirements in the event check definition. Users can specify
       # a minimum number of `occurrences` before an event will be
@@ -21,11 +38,11 @@ module Sensu
       # @return [Array] containing filter output and status.
       def event_filtered?(event)
         check = event[:check]
-        occurrences = check[:occurrences] || 1
-        refresh = check[:refresh] || 1800
+        occurrences = str2int(check[:occurrences]) || 1
+        refresh = str2int(check[:refresh]) || 1800
         if event[:action] == :resolve && event[:occurrences_watermark] >= occurrences
           return ["enough occurrences", 1]
-        elsif occurrences.is_a?(Integer) && refresh.is_a?(Integer)
+        else
           if event[:occurrences] < occurrences
             return ["not enough occurrences", 0]
           end
