@@ -1,22 +1,29 @@
 # Change Log
 
+## [Unreleased](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.3.0...HEAD)
+
+## [v1.3.0](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.2.0...v1.3.0)
+
+### Added
+- new function `str2int` which converts string to integers or returns the input back if it was already an integer (@paulrqualtrics)
+
 ## [v1.2.0](https://github.com/sensu-extensions/sensu-extensions-occurrences/tree/v1.2.0) (2017-03-22)
 [Full Changelog](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.1.0...v1.2.0)
 
-**Closed issues:**
+### Fixed
 
 - flapping action not handled [\#5](https://github.com/sensu-extensions/sensu-extensions-occurrences/issues/5)
 - Not respecting check config for occurences [\#4](https://github.com/sensu-extensions/sensu-extensions-occurrences/issues/4)
 - Event check history should be used to ensure resolution events are handled [\#1](https://github.com/sensu-extensions/sensu-extensions-occurrences/issues/1)
 
-**Merged pull requests:**
+### Added
 
 - Support refresh with flapping events [\#6](https://github.com/sensu-extensions/sensu-extensions-occurrences/pull/6) ([portertech](https://github.com/portertech))
 
 ## [v1.1.0](https://github.com/sensu-extensions/sensu-extensions-occurrences/tree/v1.1.0) (2016-08-22)
 [Full Changelog](https://github.com/sensu-extensions/sensu-extensions-occurrences/compare/v1.0.0...v1.1.0)
 
-**Merged pull requests:**
+### Added
 
 - Updating logic to consider occurrence\_watermark when handling resolve events [\#2](https://github.com/sensu-extensions/sensu-extensions-occurrences/pull/2) ([cwjohnston](https://github.com/cwjohnston))
 
