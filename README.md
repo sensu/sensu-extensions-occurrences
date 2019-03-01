@@ -6,7 +6,7 @@ This filter extension provides the Sensu Core built-in filter
 This filter provides the functionality that will soon be removed from
 the sensu-plugin handler library. Cameron Johnston wrote a great blog
 post on this topic, [Deprecating Event Filtering in
-sensu-plugin](https://sensuapp.org/blog/2016/07/07/sensu-plugin-filter-deprecation.html).
+sensu-plugin](https://blog.sensu.io/deprecating-event-filtering-in-sensu-plugin-b60c7c500be3).
 
 The `occurrences` filter will determine if an event occurrence count
 meets the user defined requirements in the event check definition.
